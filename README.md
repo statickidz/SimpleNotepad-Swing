@@ -1,15 +1,17 @@
 # SimpleNotepad-Swing
 Word processor made with Java and Swing with MCV pattern.
 
-	Posibilidad de aplicar estilos al texto seleccionado
-	Crear documentos
-	Guardar documentos en formatos DOC, HTML y SNP (extensión propia)
-	Auto añadido de extensión al guardar documentos y aviso de sobre escritura
-	Posibilidad de imprimir documentos (ergo guardar como PDF)
-	Copiar, cortar y pegar. Desde el botón derecho, con los métodos abreviados del teclado y desde el menú
-	Formateo de texto: negrita, itálica, subrayado
-	Cambio de color mediante un selector
-	Alineación de texto: izquierda, centro y derecha
-	Cambio de fuente, eligiendo las del sistema y tamaño de la misma
-	Inserción de imágenes: Se ha empleado el formato Base64, muy utilizado en HTML para convertir las mismas con una librería externa (no se ha implementado para Word, por lo que no se pueden visualizar, habría que convertirlas a RTF o a XML formateado para que este las admita
-	Deshacer y rehacer, mediante teclado y botones
+![Alt "SimpleNotepad"](http://img.imgur.com/diGHyNp.png "SimpleNotepad")
+
+* Ability to apply styles to selected text
+* Create documents
+* Save documents in DOC, HTML and SNP formats (own extension)
+* Auto added extension to save documents and overwrite warning
+* Ability to print documents (ergo save as PDF)
+* Copy, cut and paste. From the right, with keyboard shortcuts and from the menu
+* text formatting: bold, italic, underline
+* color change by a selector
+* Text Alignment: left, center and right
+* Switching power, choosing the size of the system and the same
+* Inserting images: It has used the Base64 format, widely used in HTML to convert them to an external library (not implemented for Word, which can not be displayed, should convert to RTF or XML formatted for this might support
+* Undo and Redo, using keyboard and buttons
