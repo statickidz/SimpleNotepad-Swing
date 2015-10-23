@@ -15,3 +15,7 @@ Word processor made with Java and Swing with MCV pattern.
 * Switching power, choosing the size of the system and the same
 * Inserting images: It has used the Base64 format, widely used in HTML to convert them to an external library (not implemented for Word, which can not be displayed, should convert to RTF or XML formatted for this might support
 * Undo and Redo, using keyboard and buttons
+
+
+
+[https://statickidz.com](https://statickidz.com)
