@@ -55,7 +55,6 @@ import javax.swing.undo.UndoManager;
 import simplenotepad.helpers.CustomHtmlEditorKitHelper;
 import simplenotepad.helpers.FileTypeFilterHelper;
 import simplenotepad.helpers.ForegroundActionHelper;
-import simplenotepad.helpers.HtmlLineBreakHelper;
 import simplenotepad.helpers.UndoManagerHelper;
 import simplenotepad.lib.Base64;
 import simplenotepad.models.EditorModel;
