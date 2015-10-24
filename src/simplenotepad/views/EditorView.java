@@ -45,6 +45,7 @@ public class EditorView extends javax.swing.JFrame {
         newButton = new javax.swing.JButton();
         openButton = new javax.swing.JButton();
         saveButton = new javax.swing.JButton();
+        printButton = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         copyButton = new javax.swing.JButton();
         cutButton = new javax.swing.JButton();
@@ -58,12 +59,11 @@ public class EditorView extends javax.swing.JFrame {
         alignLeftButton = new javax.swing.JButton();
         alignCenterButton = new javax.swing.JButton();
         alignRightButton = new javax.swing.JButton();
-        fontFamilyCombo = new javax.swing.JComboBox();
-        fontSizeCombo = new javax.swing.JComboBox();
+        fontFamilyCombo = new javax.swing.JComboBox<>();
+        fontSizeCombo = new javax.swing.JComboBox<>();
         jSeparator4 = new javax.swing.JSeparator();
         imageButton = new javax.swing.JButton();
         undoButton = new javax.swing.JButton();
-        redoButton = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JSeparator();
         helpButton = new javax.swing.JButton();
         editorContainer = new javax.swing.JScrollPane();
@@ -95,24 +95,31 @@ public class EditorView extends javax.swing.JFrame {
         actionsContainer.setBackground(new java.awt.Color(255, 255, 255));
         actionsContainer.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 2, 2));
 
-        newButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/document-new.png"))); // NOI18N
+        newButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/document-new.png"))); // NOI18N
         newButton.setToolTipText("Nuevo documento");
         newButton.setBorderPainted(false);
         newButton.setMaximumSize(new java.awt.Dimension(65, 65));
         newButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(newButton);
 
-        openButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/document-open.png"))); // NOI18N
+        openButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/document-open.png"))); // NOI18N
         openButton.setToolTipText("Abrir documento");
         openButton.setMaximumSize(new java.awt.Dimension(65, 65));
         openButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(openButton);
 
-        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/document-save.png"))); // NOI18N
+        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/media-floppy.png"))); // NOI18N
         saveButton.setToolTipText("Guardar");
         saveButton.setMaximumSize(new java.awt.Dimension(65, 65));
         saveButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(saveButton);
+
+        printButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/printer.png"))); // NOI18N
+        printButton.setToolTipText("Rehacer");
+        printButton.setMaximumSize(new java.awt.Dimension(12, 12));
+        printButton.setMinimumSize(new java.awt.Dimension(12, 12));
+        printButton.setPreferredSize(new java.awt.Dimension(36, 36));
+        actionsContainer.add(printButton);
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setToolTipText("");
@@ -121,21 +128,21 @@ public class EditorView extends javax.swing.JFrame {
         jSeparator3.setPreferredSize(new java.awt.Dimension(1, 30));
         actionsContainer.add(jSeparator3);
 
-        copyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/edit-copy.png"))); // NOI18N
+        copyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/edit-copy.png"))); // NOI18N
         copyButton.setToolTipText("Copiar");
         copyButton.setMaximumSize(new java.awt.Dimension(12, 12));
         copyButton.setMinimumSize(new java.awt.Dimension(12, 12));
         copyButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(copyButton);
 
-        cutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/edit-cut.png"))); // NOI18N
+        cutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/edit-cut.png"))); // NOI18N
         cutButton.setToolTipText("Cortar");
         cutButton.setMaximumSize(new java.awt.Dimension(12, 12));
         cutButton.setMinimumSize(new java.awt.Dimension(12, 12));
         cutButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(cutButton);
 
-        pasteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/edit-paste.png"))); // NOI18N
+        pasteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/edit-paste.png"))); // NOI18N
         pasteButton.setToolTipText("Pegar");
         pasteButton.setMaximumSize(new java.awt.Dimension(12, 12));
         pasteButton.setMinimumSize(new java.awt.Dimension(12, 12));
@@ -149,28 +156,28 @@ public class EditorView extends javax.swing.JFrame {
         jSeparator1.setPreferredSize(new java.awt.Dimension(1, 30));
         actionsContainer.add(jSeparator1);
 
-        boldButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/format-text-bold.png"))); // NOI18N
+        boldButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/format-text-bold.png"))); // NOI18N
         boldButton.setToolTipText("Negrita");
         boldButton.setMaximumSize(new java.awt.Dimension(12, 12));
         boldButton.setMinimumSize(new java.awt.Dimension(12, 12));
         boldButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(boldButton);
 
-        italicButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/format-text-italic.png"))); // NOI18N
+        italicButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/format-text-italic.png"))); // NOI18N
         italicButton.setToolTipText("Itálica");
         italicButton.setMaximumSize(new java.awt.Dimension(12, 12));
         italicButton.setMinimumSize(new java.awt.Dimension(12, 12));
         italicButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(italicButton);
 
-        underlineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/format-text-underline.png"))); // NOI18N
+        underlineButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/format-text-underline.png"))); // NOI18N
         underlineButton.setToolTipText("Subrayado");
         underlineButton.setMaximumSize(new java.awt.Dimension(12, 12));
         underlineButton.setMinimumSize(new java.awt.Dimension(12, 12));
         underlineButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(underlineButton);
 
-        colorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/format-text-color.png"))); // NOI18N
+        colorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/format-text-color.png"))); // NOI18N
         colorButton.setToolTipText("Color");
         colorButton.setMaximumSize(new java.awt.Dimension(12, 12));
         colorButton.setMinimumSize(new java.awt.Dimension(12, 12));
@@ -184,21 +191,21 @@ public class EditorView extends javax.swing.JFrame {
         jSeparator2.setPreferredSize(new java.awt.Dimension(1, 30));
         actionsContainer.add(jSeparator2);
 
-        alignLeftButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/format-justify-left.png"))); // NOI18N
+        alignLeftButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/format-justify-left.png"))); // NOI18N
         alignLeftButton.setToolTipText("Alinear a la izquierda");
         alignLeftButton.setMaximumSize(new java.awt.Dimension(12, 12));
         alignLeftButton.setMinimumSize(new java.awt.Dimension(12, 12));
         alignLeftButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(alignLeftButton);
 
-        alignCenterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/format-justify-center.png"))); // NOI18N
+        alignCenterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/format-justify-center.png"))); // NOI18N
         alignCenterButton.setToolTipText("Centrar");
         alignCenterButton.setMaximumSize(new java.awt.Dimension(12, 12));
         alignCenterButton.setMinimumSize(new java.awt.Dimension(12, 12));
         alignCenterButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(alignCenterButton);
 
-        alignRightButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/format-justify-right.png"))); // NOI18N
+        alignRightButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/format-justify-right.png"))); // NOI18N
         alignRightButton.setToolTipText("Alinear a la derecha");
         alignRightButton.setMaximumSize(new java.awt.Dimension(12, 12));
         alignRightButton.setMinimumSize(new java.awt.Dimension(12, 12));
@@ -230,26 +237,19 @@ public class EditorView extends javax.swing.JFrame {
         jSeparator4.setPreferredSize(new java.awt.Dimension(1, 30));
         actionsContainer.add(jSeparator4);
 
-        imageButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/image-x-generic.png"))); // NOI18N
+        imageButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/image-x-generic.png"))); // NOI18N
         imageButton.setToolTipText("Insertar imagen");
         imageButton.setMaximumSize(new java.awt.Dimension(12, 12));
         imageButton.setMinimumSize(new java.awt.Dimension(12, 12));
         imageButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(imageButton);
 
-        undoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/edit-undo.png"))); // NOI18N
+        undoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/edit-undo.png"))); // NOI18N
         undoButton.setToolTipText("Deshacer");
         undoButton.setMaximumSize(new java.awt.Dimension(12, 12));
         undoButton.setMinimumSize(new java.awt.Dimension(12, 12));
         undoButton.setPreferredSize(new java.awt.Dimension(36, 36));
         actionsContainer.add(undoButton);
-
-        redoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/actions/edit-redo.png"))); // NOI18N
-        redoButton.setToolTipText("Rehacer");
-        redoButton.setMaximumSize(new java.awt.Dimension(12, 12));
-        redoButton.setMinimumSize(new java.awt.Dimension(12, 12));
-        redoButton.setPreferredSize(new java.awt.Dimension(36, 36));
-        actionsContainer.add(redoButton);
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator5.setToolTipText("");
@@ -258,7 +258,7 @@ public class EditorView extends javax.swing.JFrame {
         jSeparator5.setPreferredSize(new java.awt.Dimension(1, 30));
         actionsContainer.add(jSeparator5);
 
-        helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/apps/help-browser.png"))); // NOI18N
+        helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simplenotepad/assets/icons/help-browser.png"))); // NOI18N
         helpButton.setToolTipText("Ayuda");
         helpButton.setMaximumSize(new java.awt.Dimension(12, 12));
         helpButton.setMinimumSize(new java.awt.Dimension(12, 12));
@@ -349,7 +349,7 @@ public class EditorView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(editorContainer, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(actionsContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 872, Short.MAX_VALUE)
+            .addComponent(actionsContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,8 +378,8 @@ public class EditorView extends javax.swing.JFrame {
     private javax.swing.JScrollPane editorContainer;
     public javax.swing.JMenuItem exitMenu;
     private javax.swing.JMenu fileMenu;
-    public javax.swing.JComboBox fontFamilyCombo;
-    public javax.swing.JComboBox fontSizeCombo;
+    public javax.swing.JComboBox<String> fontFamilyCombo;
+    public javax.swing.JComboBox<Integer> fontSizeCombo;
     public javax.swing.JButton helpButton;
     public javax.swing.JButton imageButton;
     public javax.swing.JButton italicButton;
@@ -399,8 +399,8 @@ public class EditorView extends javax.swing.JFrame {
     public javax.swing.JMenuItem openMenu;
     public javax.swing.JButton pasteButton;
     public javax.swing.JMenuItem pasteMenu;
+    public javax.swing.JButton printButton;
     public javax.swing.JMenuItem printMenu;
-    public javax.swing.JButton redoButton;
     public javax.swing.JMenuItem redoMenu;
     public javax.swing.JMenuItem saveAsMenu;
     public javax.swing.JButton saveButton;

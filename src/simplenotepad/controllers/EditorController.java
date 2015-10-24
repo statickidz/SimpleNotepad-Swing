@@ -162,6 +162,9 @@ public class EditorController implements ActionListener {
         view.saveButton.setActionCommand("saveDocument");
         view.saveButton.addActionListener(this);
         
+        view.printButton.setActionCommand("printDocument");
+        view.printButton.addActionListener(this);
+        
         setButtonAction(view.copyButton, new DefaultEditorKit.CopyAction(), null);
         setButtonAction(view.cutButton, new DefaultEditorKit.CutAction(), null);
         setButtonAction(view.pasteButton, new DefaultEditorKit.PasteAction(), null);
@@ -176,7 +179,6 @@ public class EditorController implements ActionListener {
         setButtonAction(view.alignRightButton, new StyledEditorKit.AlignmentAction("", StyleConstants.ALIGN_RIGHT), null);
         
         setButtonAction(view.undoButton, UndoManagerHelper.getUndoAction(undoManager), null);
-        setButtonAction(view.redoButton, UndoManagerHelper.getRedoAction(undoManager), null);
 
         view.fontFamilyCombo.addItemListener(changeFontFamily());
         view.fontSizeCombo.addItemListener(changeFontSize());
@@ -247,7 +249,7 @@ public class EditorController implements ActionListener {
         Style.button(view.alignCenterButton);
         Style.button(view.alignRightButton);
         Style.button(view.undoButton);
-        Style.button(view.redoButton);
+        Style.button(view.printButton);
         Style.button(view.imageButton);
         Style.button(view.helpButton);
         

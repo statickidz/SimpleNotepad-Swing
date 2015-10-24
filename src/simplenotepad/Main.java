@@ -18,8 +18,6 @@
 package simplenotepad;
 
 import java.awt.EventQueue;
-import javafx.application.Application;
-import javafx.stage.Stage;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import simplenotepad.controllers.EditorController;
@@ -32,11 +30,12 @@ import simplenotepad.views.EditorView;
  * @email statickidz@gmail.com
  * @web https://statickidz.com
  */
-public class Main extends Application {
+public class Main {
     
-    @Override
-    public void start(Stage primaryStage) {
-        
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         //Set system default look and feel to current system
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -51,13 +50,6 @@ public class Main extends Application {
             EditorController editorController = new EditorController(editorView, editorModel);
             editorController.setView();
         });
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
     }
     
 }
