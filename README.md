@@ -1,5 +1,5 @@
 # SimpleNotepad-Swing
-Word processor made with Java and Swing with MVC pattern.
+Word processor made with Java and Swing with MVP pattern.
 
 ![Alt "SimpleNotepad"](http://img.imgur.com/diGHyNp.png "SimpleNotepad")
 
